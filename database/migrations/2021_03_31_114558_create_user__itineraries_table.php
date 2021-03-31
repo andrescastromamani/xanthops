@@ -15,14 +15,14 @@ class CreateUserItinerariesTable extends Migration
     {
         Schema::create('user__itineraries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('created_date_time');
-            $table->dateTime('updated_date_time');
             $table->string('name');
             $table->dateTime('date_from');
             $table->dateTime('date_to');
             $table->boolean('is_public');
-            $table->unsignedInteger('user_id'); // Relation user
-            $table->unsignedInteger('spot_id'); // Relation spot
+            $table->unsignedBigInteger('user_id'); // Relation user
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('post_id'); // Relation spot
+            $table->foreign('post_id')->references('id')->on('posts');
             $table->timestamps();
         });
     }
