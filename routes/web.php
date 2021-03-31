@@ -13,20 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', 'PagesController@index')->name('welcome');
 
 /*Route::get('services/{id?}', function ($id = ""){
     return 'Services' .$id;
 })->where('id', '[0-9]+');*/
 
-Route::get('services', function (){
-    return view('services');
-})->name('services');
+Route::get('services', 'PagesController@services')->name('services');
 
-Route::get('team/{name?}',function ($name = null){
-    $teamWork = ['Andres','Fidel','Rimer','Daniel','Ariel'];
-    //return view('team',['teamWork'=>$teamWork]);
-    return view('team',compact('teamWork', 'name'));
-})->name('team');
+Route::get('team/{name?}','PagesController@team')->name('team');
