@@ -27,6 +27,8 @@ Route::get('contact','PagesController@contact')->name('contact');
 
 Route::get('metrics','PagesController@metrics')->name('metrics');
 
+Route::get('inicio','PagesController@inicio')->name('inicio');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

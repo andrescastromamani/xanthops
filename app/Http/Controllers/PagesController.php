@@ -15,4 +15,8 @@ class PagesController extends Controller
     public function metrics(){
         return view('metrics');
     }
+    public function inicio(){
+        return view('inicio');
+    }
+
 }

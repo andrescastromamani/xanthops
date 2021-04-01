@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,18 +12,16 @@
 
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-
 </head>
 
 <body>
-
     <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element"> <span>
-                                <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                                <img alt="image" class="img-circle" src="{{asset('img/profile_small.jpg')}}" />
                                  </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
@@ -279,7 +276,7 @@
                                 <li>
                                     <div class="dropdown-messages-box">
                                         <a href="profile.html" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a7.jpg">
+                                            <img alt="image" class="img-circle" src="{{asset('img/a7.jpg')}}">
                                         </a>
                                         <div class="media-body">
                                             <small class="pull-right">46h ago</small>
@@ -293,7 +290,7 @@
                                 <li>
                                     <div class="dropdown-messages-box">
                                         <a href="profile.html" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a4.jpg">
+                                            <img alt="image" class="img-circle" src="{{asset('img/a4.jpg')}}">
                                         </a>
                                         <div class="media-body ">
                                             <small class="pull-right text-navy">5h ago</small>
@@ -307,7 +304,7 @@
                                 <li>
                                     <div class="dropdown-messages-box">
                                         <a href="profile.html" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/profile.jpg">
+                                            <img alt="image" class="img-circle" src="{{asset('img/profile.jpg')}}">
                                         </a>
                                         <div class="media-body ">
                                             <small class="pull-right">23h ago</small>
@@ -385,14 +382,6 @@
                 </nav>
             </div>
             @yield('section')
-            <div class="footer" >
-                <div class="pull-right">
-                    10GB of <strong>250GB</strong> Free.
-                </div>
-                <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2017
-                </div>
-            </div>
         </div>
         <div class="small-chat-box fadeInRight animated">
 
@@ -473,18 +462,14 @@
 
         </div>
         <div id="small-chat">
-
             <span class="badge badge-warning pull-right">5</span>
             <a class="open-small-chat">
                 <i class="fa fa-comments"></i>
-
             </a>
         </div>
         <div id="right-sidebar" class="animated">
             <div class="sidebar-container">
-
                 <ul class="nav nav-tabs navs-3">
-
                     <li class="active"><a data-toggle="tab" href="#tab-1">
                             Notes
                         </a></li>
@@ -495,23 +480,19 @@
                             <i class="fa fa-gear"></i>
                         </a></li>
                 </ul>
-
                 <div class="tab-content">
-
-
                     <div id="tab-1" class="tab-pane active">
 
                         <div class="sidebar-title">
                             <h3> <i class="fa fa-comments-o"></i> Latest Notes</h3>
                             <small><i class="fa fa-tim"></i> You have 10 new message.</small>
                         </div>
-
                         <div>
 
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a1.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="{{asset('img/a1.jpg')}}">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -529,7 +510,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a2.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="{{asset('img/a2.jpg')}}">
                                     </div>
                                     <div class="media-body">
                                         The point of using Lorem Ipsum is that it has a more-or-less normal.
@@ -541,7 +522,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="{{asset('img/a3.jpg')}}">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -560,7 +541,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="{{asset('img/a4.jpg')}}">
                                     </div>
 
                                     <div class="media-body">
@@ -573,7 +554,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a8.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="{{asset('img/a8.jpg')}}">
                                     </div>
                                     <div class="media-body">
 
@@ -586,7 +567,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a7.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="{{asset('img/a7.jpg')}}">
                                     </div>
                                     <div class="media-body">
                                         Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
@@ -599,7 +580,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="{{asset('img/a3.jpg')}}">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -617,7 +598,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="{{asset('img/a4.jpg')}}">
                                     </div>
                                     <div class="media-body">
                                         Uncover many web sites still in their infancy. Various versions have.
@@ -866,8 +847,6 @@
 
             </div>
 
-
-
         </div>
     </div>
     <!-- Mainly scripts -->
@@ -974,16 +953,12 @@
                     backgroundColor: ["#a3e1d4","#dedede","#9CC3DA"]
                 }]
             } ;
-
-
             var doughnutOptions = {
                 responsive: false,
                 legend: {
                     display: false
                 }
             };
-
-
             var ctx4 = document.getElementById("doughnutChart").getContext("2d");
             new Chart(ctx4, {type: 'doughnut', data: doughnutData, options:doughnutOptions});
 
@@ -994,19 +969,14 @@
                     backgroundColor: ["#a3e1d4","#dedede","#9CC3DA"]
                 }]
             } ;
-
-
             var doughnutOptions = {
                 responsive: false,
                 legend: {
                     display: false
                 }
             };
-
-
             var ctx4 = document.getElementById("doughnutChart2").getContext("2d");
             new Chart(ctx4, {type: 'doughnut', data: doughnutData, options:doughnutOptions});
-
         });
     </script>
 </body>
