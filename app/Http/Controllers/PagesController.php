@@ -18,8 +18,10 @@ class PagesController extends Controller
     public function inicio(){
         return view('inicio');
     }
-    public function widgets()
-    {
+    public function widgets(){
         return view('widgets');
+    }
+    public function layouts(){
+        return view('layouts');
     }
 }

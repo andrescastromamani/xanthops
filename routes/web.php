@@ -31,6 +31,7 @@ Route::get('inicio','PagesController@inicio')->name('inicio');
 
 Route::get('widgets','PagesController@widgets')->name('widgets');
 
+Route::get('layouts','PagesController@layouts')->name('layouts');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
