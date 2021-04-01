@@ -74,10 +74,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a>
+                        <a href="{{route('metrics')}}"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a>
                     </li>
                     <li>
-                        <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
+                        <a href="{{route('widgets')}}"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>

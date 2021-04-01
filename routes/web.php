@@ -29,6 +29,8 @@ Route::get('metrics','PagesController@metrics')->name('metrics');
 
 Route::get('inicio','PagesController@inicio')->name('inicio');
 
+Route::get('widgets','PagesController@widgets')->name('widgets');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
