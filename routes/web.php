@@ -25,6 +25,8 @@ Route::get('team/{name?}','HomeController@team')->name('team');
 
 Route::get('contact','PagesController@contact')->name('contact');
 
+Route::get('metrics','PagesController@metrics')->name('metrics');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
