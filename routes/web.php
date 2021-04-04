@@ -15,23 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index')->name('welcome');
 
-/*Route::get('services/{id?}', function ($id = ""){
-    return 'Services' .$id;
-})->where('id', '[0-9]+');*/
+Route::get('widgets','HomeController@widgets')->name('widgets');
 
-Route::get('services', 'HomeController@services')->name('services');
+Route::get('layouts','HomeController@layouts')->name('layouts');
 
-Route::get('team/{name?}','HomeController@team')->name('team');
-
-Route::get('contact','PagesController@contact')->name('contact');
-
-Route::get('metrics','PagesController@metrics')->name('metrics');
-
-Route::get('inicio','PagesController@inicio')->name('inicio');
-
-Route::get('widgets','PagesController@widgets')->name('widgets');
-
-Route::get('layouts','PagesController@layouts')->name('layouts');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
