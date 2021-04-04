@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -179,8 +178,6 @@
                                 </li>
                             </ul>
                         </li>
-
-
                         <li>
                             <a href="login.html">
                                 <i class="fa fa-sign-out"></i> Log out
@@ -198,16 +195,13 @@
             @yield('section')
         </div>
         <div class="small-chat-box fadeInRight animated">
-
             <div class="heading" draggable="true">
                 <small class="chat-date pull-right">
                     02.19.2015
                 </small>
                 Small chat
             </div>
-
             <div class="content">
-
                 <div class="left">
                     <div class="author-name">
                         Monica Jackson <small class="chat-date">
@@ -263,8 +257,6 @@
                         I belive that. Lorem Ipsum is simply dummy text.
                     </div>
                 </div>
-
-
             </div>
             <div class="form-chat">
                 <div class="input-group input-group-sm">
@@ -273,7 +265,6 @@
                         </button> </span>
                 </div>
             </div>
-
         </div>
         <div id="small-chat">
             <span class="badge badge-warning pull-right">5</span>
@@ -296,13 +287,11 @@
                 </ul>
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane active">
-
                         <div class="sidebar-title">
                             <h3> <i class="fa fa-comments-o"></i> Latest Notes</h3>
                             <small><i class="fa fa-tim"></i> You have 10 new message.</small>
                         </div>
                         <div>
-
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
@@ -314,7 +303,6 @@
                                         </div>
                                     </div>
                                     <div class="media-body">
-
                                         There are many variations of passages of Lorem Ipsum available.
                                         <br>
                                         <small class="text-muted">Today 4:21 pm</small>
@@ -422,16 +410,12 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
-
                     <div id="tab-2" class="tab-pane">
-
                         <div class="sidebar-title">
                             <h3> <i class="fa fa-cube"></i> Latest projects</h3>
                             <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
                         </div>
-
                         <ul class="sidebar-list">
                             <li>
                                 <a href="#">
@@ -528,16 +512,12 @@
                             </li>
 
                         </ul>
-
                     </div>
-
                     <div id="tab-3" class="tab-pane">
-
                         <div class="sidebar-title">
                             <h3><i class="fa fa-gears"></i> Settings</h3>
                             <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
                         </div>
-
                         <div class="setings-item">
                             <span>
                                 Show notifications
@@ -643,7 +623,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="sidebar-content">
                             <h4>Settings</h4>
                             <div class="small">
@@ -655,12 +634,9 @@
                                 like).
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
     <!-- Mainly scripts -->
@@ -668,40 +644,30 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
     <script src="{{asset('js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
-
     <!-- Flot -->
     <script src="{{asset('js/plugins/flot/jquery.flot.js')}}"></script>
     <script src="{{asset('js/plugins/flot/jquery.flot.tooltip.min.js')}}"></script>
     <script src="{{asset('js/plugins/flot/jquery.flot.spline.js')}}"></script>
     <script src="{{asset('js/plugins/flot/jquery.flot.resize.js')}}"></script>
     <script src="{{asset('js/plugins/flot/jquery.flot.pie.js')}}"></script>
-
     <!-- Peity -->
     <script src="{{asset('js/plugins/peity/jquery.peity.min.js')}}"></script>
     <script src="{{asset('js/demo/peity-demo.js')}}"></script>
-
     <!-- Custom and plugin javascript -->
     <script src="{{asset('js/inspinia.js')}}"></script>
     <script src="{{asset('js/plugins/pace/pace.min.js')}}"></script>
-
     <!-- jQuery UI -->
     <script src="{{'js/plugins/jquery-ui/jquery-ui.min.js'}}"></script>
-
     <!-- GITTER -->
     <script src="{{asset('js/plugins/gritter/jquery.gritter.min.js')}}"></script>
-
     <!-- Sparkline -->
     <script src="{{asset('js/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
-
     <!-- Sparkline demo data  -->
     <script src="{{asset('js/demo/sparkline-demo.js')}}"></script>
-
     <!-- ChartJS-->
     <script src="{{asset('js/plugins/chartJs/Chart.min.js')}}"></script>
-
     <!-- Toastr -->
     <script src="{{asset('js/plugins/toastr/toastr.min.js')}}"></script>
-
     <script>
         $(document).ready(function() {
             setTimeout(function() {
@@ -712,10 +678,7 @@
                     timeOut: 4000
                 };
                 toastr.success('Responsive Admin Theme', 'Welcome to INSPINIA');
-
             }, 1300);
-
-
             var data1 = [
                 [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,30],[11,10],[12,13],[13,4],[14,3],[15,3],[16,6]
             ];
@@ -759,7 +722,6 @@
                     tooltip: false
                 }
             );
-
             var doughnutData = {
                 labels: ["App","Software","Laptop" ],
                 datasets: [{
