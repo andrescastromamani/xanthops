@@ -45,8 +45,8 @@
                     <li>
                         <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="table_basic.html">Static Tables</a></li>
-                            <li><a href="table_data_tables.html">Data Tables</a></li>
+                            <li><a href="{{route('table_basic')}}">Static Tables</a></li>
+                            <li><a href="{{route('table_data')}}">Data Tables</a></li>
                             <li><a href="table_foo_table.html">Foo Tables</a></li>
                             <li><a href="jq_grid.html">jqGrid</a></li>
                         </ul>

@@ -31,4 +31,10 @@ class HomeController extends Controller
     public  function  layouts(){
         return view('layouts');
     }
+    public  function  table_basic(){
+        return view('table_basic');
+    }
+    public  function  table_data(){
+        return view('table_data');
+    }
 }

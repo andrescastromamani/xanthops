@@ -19,6 +19,10 @@ Route::get('widgets','HomeController@widgets')->name('widgets');
 
 Route::get('layouts','HomeController@layouts')->name('layouts');
 
+Route::get('table_basic','HomeController@table_basic')->name('table_basic');
+
+Route::get('table_data','HomeController@table_data')->name('table_data');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
