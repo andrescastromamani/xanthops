@@ -26,6 +26,6 @@
         <input type="text" name="title" placeholder="Titulo" class="form-control mb-2" value="{{ $note->title }}">
         <input type="text" name="description" placeholder="Descripcion" class="form-control mb-2"
                value="{{ $note->description }}">
-        <button class="btn btn-warning btn-block" type="submit">Editar</button>
+        <button class="btn btn-warning btn-block" type="submit" href="{{route('table_data')}}">Editar</button>
     </form>
 @endsection

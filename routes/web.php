@@ -29,6 +29,7 @@ Route::get('/edit/{id}','HomeController@edit')->name('edit');
 
 Route::put('/edit/{id}', 'HomeController@update' )->name('update');
 
+Route::delete('/delete/{id}', 'HomeController@delete')->name('delete');
 
 Auth::routes();
 

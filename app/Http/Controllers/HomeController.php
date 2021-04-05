@@ -36,7 +36,7 @@ class HomeController extends Controller
         return view('table_basic');
     }
     public  function  table_data(){
-        $notes = App\Note::all();
+        $notes = App\Note::paginate(3);
         return view('table_data',compact('notes'));
     }
     public function create(Request $request){
@@ -63,5 +63,12 @@ class HomeController extends Controller
         $noteUpdate->description = $request->description;
         $noteUpdate->save();
         return back()->with('message', 'Nota editada correctamente!');
+    }
+    public function delete($id){
+
+        $noteDelete = App\Note::findOrFail($id);
+        $noteDelete->delete();
+
+        return back()->with('message', 'Nota Eliminada Exitosamente!');
     }
 }
