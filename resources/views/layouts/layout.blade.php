@@ -26,7 +26,7 @@
                                 <li><a href="contacts.html">Contacts</a></li>
                                 <li><a href="mailbox.html">Mailbox</a></li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">Logout</a></li>
+                                <li><a href="{{route('home')}}">Logout</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -47,8 +47,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="{{route('table_basic')}}">Static Tables</a></li>
                             <li><a href="{{route('table_data')}}">Data Tables</a></li>
-                            <li><a href="table_foo_table.html">Foo Tables</a></li>
-                            <li><a href="jq_grid.html">jqGrid</a></li>
+                            <li><a href="{{route('users_list')}}">Users List</a></li>
                         </ul>
                     </li>
                     <li>

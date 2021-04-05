@@ -31,6 +31,12 @@ Route::put('/edit/{id}', 'HomeController@update' )->name('update');
 
 Route::delete('/delete/{id}', 'HomeController@delete')->name('delete');
 
+/*User*/
+Route::get('users_list', 'HomeController@users_list')->name('users_list');
+Route::get('/user_edit/{id}', 'HomeController@user_edit')->name('user_edit');
+Route::put('/user_edit/{id}', 'HomeController@user_update' )->name('user_update');
+Route::delete('/user_delete/{id}', 'HomeController@user_delete')->name('user_delete');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

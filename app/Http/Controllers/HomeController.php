@@ -65,10 +65,33 @@ class HomeController extends Controller
         return back()->with('message', 'Nota editada correctamente!');
     }
     public function delete($id){
-
         $noteDelete = App\Note::findOrFail($id);
         $noteDelete->delete();
-
         return back()->with('message', 'Nota Eliminada Exitosamente!');
+    }
+
+    /*Users*/
+    public function users_list(){
+        $users = App\User::all();
+        return view('users_list', compact('users'));
+    }
+    public function user_edit($id){
+        $user = App\User::findOrFail($id);
+        return view('user_edit', compact('user'));
+    }
+    public function user_update(Request $request, $id){
+
+        $userUpdate = App\User::find($id);
+        $userUpdate->name = $request->name;
+        $userUpdate->last_name = $request->last_name;
+        $userUpdate->phone_number = $request->phone_number;
+        $userUpdate->email = $request->email;
+        $userUpdate->save();
+        return back()->with('message', 'Usuario editado exitosamente!');
+    }
+    public function user_delete($id){
+        $userDelete = App\User::findOrFail($id);
+        $userDelete->delete();
+        return back()->with('message', 'Usuario eliminado exitosamente!');
     }
 }
