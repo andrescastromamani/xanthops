@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
 
 class HomeController extends Controller
 {
@@ -35,6 +36,32 @@ class HomeController extends Controller
         return view('table_basic');
     }
     public  function  table_data(){
-        return view('table_data');
+        $notes = App\Note::all();
+        return view('table_data',compact('notes'));
+    }
+    public function create(Request $request){
+        //return $request;
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+        $newNote = new App\Note;
+        $newNote->title = $request->title;
+        $newNote->description = $request->description;
+        $newNote->save();
+
+        return back()->with('message', 'Nota agregada correctamente!');
+    }
+    public function edit($id){
+        $note = App\Note::findOrFail($id);
+        return view('edit', compact('note'));
+    }
+    public function update(Request $request, $id){
+
+        $noteUpdate = App\Note::find($id);
+        $noteUpdate->title = $request->title;
+        $noteUpdate->description = $request->description;
+        $noteUpdate->save();
+        return back()->with('message', 'Nota editada correctamente!');
     }
 }
