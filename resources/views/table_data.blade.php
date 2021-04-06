@@ -82,7 +82,7 @@
                                         <td>{{$note->description}}</td>
                                         <td>
                                             <a href="{{route('edit', $note)}}" class="btn btn-warning btn-sm">Editar</a>
-                                            <form action="{{ route('delete', $note) }}" class="d-inline" method="POST">
+                                            <form action="{{ route('delete', $note) }}" class="float-right" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

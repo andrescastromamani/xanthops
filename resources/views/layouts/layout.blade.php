@@ -15,12 +15,18 @@
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
-                        <div class="dropdown profile-element"> <span>
+                        <div class="dropdown profile-element">
+                            <span>
                                 <img alt="image" class="img-circle" src="{{asset('img/profile_small.jpg')}}" />
-                                 </span>
+                            </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
-                                 </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">David Williams</strong>
+                                    </span>
+                                    <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+                                </span>
+                            </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
@@ -40,39 +46,26 @@
                         <a href="{{route('widgets')}}"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
                     </li>
                     <li>
-                        <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Users List</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="{{route('table_basic')}}">Static Tables</a></li>
-                            <li><a href="{{route('table_data')}}">Data Tables</a></li>
+                            <li><a href="{{route('table_data')}}">Notes List</a></li>
                             <li><a href="{{route('users_list')}}">Users List</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
-                    </li>
-                    <li class="landing_link">
-                        <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
-                    </li>
-                    <li class="special_link">
-                        <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
-                    </li>
                 </ul>
-
             </div>
         </nav>
         <div id="page-wrapper" class="gray-bg">
             <div class="row border-bottom">
                 <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                     <div class="navbar-header">
-                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
-                                class="fa fa-bars"></i> </a>
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
+                            <i class="fa fa-bars"></i>
+                        </a>
                         <form role="search" class="navbar-form-custom" action="search_results.html">
                             <div class="form-group">
-                                <input type="text" placeholder="Search for something..." class="form-control"
-                                       name="top-search" id="top-search">
+                                <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
                             </div>
                         </form>
                     </div>
@@ -82,7 +75,8 @@
                         </li>
                         <li class="dropdown">
                             <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                                <i class="fa fa-envelope"></i> <span class="label label-warning">16</span>
+                                <i class="fa fa-envelope"></i>
+                                <span class="label label-warning">16</span>
                             </a>
                             <ul class="dropdown-menu dropdown-messages">
                                 <li>
@@ -92,8 +86,7 @@
                                         </a>
                                         <div class="media-body">
                                             <small class="pull-right">46h ago</small>
-                                            <strong>Mike Loreipsum</strong> started following <strong>Monica
-                                                Smith</strong>. <br>
+                                            <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
                                             <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
                                         </div>
                                     </div>
@@ -106,8 +99,7 @@
                                         </a>
                                         <div class="media-body ">
                                             <small class="pull-right text-navy">5h ago</small>
-                                            <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica
-                                                Smith</strong>. <br>
+                                            <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
                                             <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
                                         </div>
                                     </div>
@@ -188,7 +180,6 @@
                             </a>
                         </li>
                     </ul>
-
                 </nav>
             </div>
             @yield('section')
@@ -203,21 +194,15 @@
             <div class="content">
                 <div class="left">
                     <div class="author-name">
-                        Monica Jackson <small class="chat-date">
-                            10:02 am
-                        </small>
+                        Monica Jackson <small class="chat-date">10:02 am</small>
                     </div>
                     <div class="chat-message active">
                         Lorem Ipsum is simply dummy text input.
                     </div>
-
                 </div>
                 <div class="right">
                     <div class="author-name">
-                        Mick Smith
-                        <small class="chat-date">
-                            11:24 am
-                        </small>
+                        Mick Smith<small class="chat-date">11:24 am</small>
                     </div>
                     <div class="chat-message">
                         Lorem Ipsum is simpl.
@@ -225,10 +210,7 @@
                 </div>
                 <div class="left">
                     <div class="author-name">
-                        Alice Novak
-                        <small class="chat-date">
-                            08:45 pm
-                        </small>
+                        Alice Novak<small class="chat-date">08:45 pm</small>
                     </div>
                     <div class="chat-message active">
                         Check this stock char.
@@ -236,10 +218,7 @@
                 </div>
                 <div class="right">
                     <div class="author-name">
-                        Anna Lamson
-                        <small class="chat-date">
-                            11:24 am
-                        </small>
+                        Anna Lamson<small class="chat-date">11:24 am</small>
                     </div>
                     <div class="chat-message">
                         The standard chunk of Lorem Ipsum
@@ -247,10 +226,7 @@
                 </div>
                 <div class="left">
                     <div class="author-name">
-                        Mick Lane
-                        <small class="chat-date">
-                            08:45 pm
-                        </small>
+                        Mick Lane<small class="chat-date">08:45 pm</small>
                     </div>
                     <div class="chat-message active">
                         I belive that. Lorem Ipsum is simply dummy text.
@@ -260,29 +236,20 @@
             <div class="form-chat">
                 <div class="input-group input-group-sm">
                     <input type="text" class="form-control">
-                    <span class="input-group-btn"> <button class="btn btn-primary" type="button">Send
-                        </button> </span>
+                    <span class="input-group-btn"> <button class="btn btn-primary" type="button">Send</button> </span>
                 </div>
             </div>
         </div>
         <div id="small-chat">
             <span class="badge badge-warning pull-right">5</span>
-            <a class="open-small-chat">
-                <i class="fa fa-comments"></i>
-            </a>
+            <a class="open-small-chat"><i class="fa fa-comments"></i></a>
         </div>
         <div id="right-sidebar" class="animated">
             <div class="sidebar-container">
                 <ul class="nav nav-tabs navs-3">
-                    <li class="active"><a data-toggle="tab" href="#tab-1">
-                            Notes
-                        </a></li>
-                    <li><a data-toggle="tab" href="#tab-2">
-                            Projects
-                        </a></li>
-                    <li class=""><a data-toggle="tab" href="#tab-3">
-                            <i class="fa fa-gear"></i>
-                        </a></li>
+                    <li class="active"><a data-toggle="tab" href="#tab-1">Notes</a></li>
+                    <li><a data-toggle="tab" href="#tab-2">Projects</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab-3"><i class="fa fa-gear"></i></a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane active">
@@ -295,7 +262,6 @@
                                 <a href="#">
                                     <div class="pull-left text-center">
                                         <img alt="image" class="img-circle message-avatar" src="{{asset('img/a1.jpg')}}">
-
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
                                             <i class="fa fa-star text-warning"></i>
@@ -324,7 +290,6 @@
                                 <a href="#">
                                     <div class="pull-left text-center">
                                         <img alt="image" class="img-circle message-avatar" src="{{asset('img/a3.jpg')}}">
-
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
                                             <i class="fa fa-star text-warning"></i>
@@ -344,7 +309,6 @@
                                     <div class="pull-left text-center">
                                         <img alt="image" class="img-circle message-avatar" src="{{asset('img/a4.jpg')}}">
                                     </div>
-
                                     <div class="media-body">
                                         Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
                                         <br>
@@ -358,7 +322,6 @@
                                         <img alt="image" class="img-circle message-avatar" src="{{asset('img/a8.jpg')}}">
                                     </div>
                                     <div class="media-body">
-
                                         All the Lorem Ipsum generators on the Internet tend to repeat.
                                         <br>
                                         <small class="text-muted">Today 4:21 pm</small>
@@ -382,7 +345,6 @@
                                 <a href="#">
                                     <div class="pull-left text-center">
                                         <img alt="image" class="img-circle message-avatar" src="{{asset('img/a3.jpg')}}">
-
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
                                             <i class="fa fa-star text-warning"></i>
