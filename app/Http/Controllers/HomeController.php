@@ -48,6 +48,12 @@ class HomeController extends Controller
         $newNote = new App\Note;
         $newNote->title = $request->title;
         $newNote->description = $request->description;
+
+        $file = $request->file('image');
+        $destinationPath = 'img/images/';
+        $filename = $file->getClientOriginalName();
+        $uploadSuccess = $request->file('image')->move($destinationPath,$filename);
+        $newNote->image = $destinationPath . $filename;
         $newNote->save();
 
         return back()->with('message', 'Nota agregada correctamente!');

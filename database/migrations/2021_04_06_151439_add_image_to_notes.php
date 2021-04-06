@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPictureToUsers extends Migration
+class AddImageToNotes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddPictureToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('picture')->after('email')->nullable();
+        Schema::table('notes', function (Blueprint $table) {
+            $table->string('image')->after('description')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddPictureToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('picture');
+        Schema::table('notes', function (Blueprint $table) {
+            $table->dropColumn('image');
         });
     }
 }

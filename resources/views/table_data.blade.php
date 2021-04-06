@@ -47,7 +47,7 @@
                         <div class="alert alert-success">{{ session('message') }}</div>
                     @endif
                     <div class="ibox-content">
-                        <form method="POST" action="">
+                        <form method="POST" action="" enctype="multipart/form-data">
                             @csrf
                             @error('title')
                             <div class="alert alert-danger " role="alert">
@@ -60,6 +60,7 @@
                             @endif
                             <input type="text" name="title" placeholder="titulo" class="form-control mb-5" value="{{old('title')}}"/>
                             <input type="text" name="description" placeholder="Descripcion" class="form-control mb-2" value="{{old('description')}}"/>
+                            <input type="file" name="image"  class="form-control mb-2"/>
                             <button class="btn btn-primary btn-block" type="submit">Agregar</button>
                         </form>
                     </div>
@@ -71,6 +72,7 @@
                                     <th>Id</th>
                                     <th>Nota</th>
                                     <th>Descripcion</th>
+                                    <th>Imagen</th>
                                     <th>Acciones</th>
                                 </tr>
                                 </thead>
@@ -80,6 +82,9 @@
                                         <td>{{$note->id}}</td>
                                         <td>{{$note->title}}</td>
                                         <td>{{$note->description}}</td>
+                                        <td>
+                                            <img src="{{$note->image}}" alt="{{$note->image}}" width="100px">
+                                        </td>
                                         <td>
                                             <a href="{{route('edit', $note)}}" class="btn btn-warning btn-sm">Editar</a>
                                             <form action="{{ route('delete', $note) }}" class="float-right" method="POST">
