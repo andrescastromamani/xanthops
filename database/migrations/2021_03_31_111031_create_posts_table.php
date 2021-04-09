@@ -17,11 +17,12 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('title');
-            $table->string('subtitle');
             $table->text('description');
             $table->string('status');
-            $table->unsignedBigInteger('category_id'); // Relation categories
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('category_id')->nullable(); // Relation categories
+            $table->foreign('category_id')->references('id')->on('categories')
+                    ->onDelete('set Null')
+                    ->onUpdate('cascade');
             $table->timestamps();
         });
     }

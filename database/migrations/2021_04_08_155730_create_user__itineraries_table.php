@@ -17,9 +17,13 @@ class CreateUserItinerariesTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('user_id'); // Relation user
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
             $table->unsignedBigInteger('post_id'); // Relation spot
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('post_id')->references('id')->on('posts')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
             $table->timestamps();
         });
     }

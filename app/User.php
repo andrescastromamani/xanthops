@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function posts(){
-        return $this->belongsToMany(Post::class, 'user__itineraries', 'user_id','post_id');
+        return $this->belongsToMany(Post::class)->withTimestamps();
     }
 }
 
