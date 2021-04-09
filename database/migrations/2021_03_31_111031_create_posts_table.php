@@ -19,13 +19,9 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->text('description');
-            $table->dateTime('from');
-            $table->dateTime('to');
             $table->string('status');
             $table->unsignedBigInteger('category_id'); // Relation categories
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->unsignedInteger('provider_id'); // Relation provider
-            $table->unsignedInteger('difficult_id'); // Relation difficult
             $table->timestamps();
         });
     }

@@ -14,11 +14,8 @@ class CreateUserItinerariesTable extends Migration
     public function up()
     {
         Schema::create('user__itineraries', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('name');
-            $table->dateTime('date_from');
-            $table->dateTime('date_to');
-            $table->boolean('is_public');
             $table->unsignedBigInteger('user_id'); // Relation user
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('post_id'); // Relation spot

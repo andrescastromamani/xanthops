@@ -37,6 +37,9 @@ Route::get('/user_edit/{id}', 'HomeController@user_edit')->name('user_edit');
 Route::put('/user_edit/{id}', 'HomeController@user_update' )->name('user_update');
 Route::delete('/user_delete/{id}', 'HomeController@user_delete')->name('user_delete');
 
+/*Post*/
+Route::get('post','homeController@post')->name('post');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -63,10 +63,15 @@ class HomeController extends Controller
         return view('edit', compact('note'));
     }
     public function update(Request $request, $id){
-
         $noteUpdate = App\Note::find($id);
         $noteUpdate->title = $request->title;
         $noteUpdate->description = $request->description;
+
+        $file = $request->file('image');
+        $destinationPath = 'img/images/';
+        $filename = $file->getClientOriginalName();
+        $uploadSuccess = $request->file('image')->move($destinationPath,$filename);
+        $noteUpdate->image = $destinationPath . $filename;
         $noteUpdate->save();
         return back()->with('message', 'Nota editada correctamente!');
     }
@@ -99,5 +104,11 @@ class HomeController extends Controller
         $userDelete = App\User::findOrFail($id);
         $userDelete->delete();
         return back()->with('message', 'Usuario eliminado exitosamente!');
+    }
+
+    /*Posts*/
+    public function post(){
+        $posts = App\Post::all();
+        return view('post',compact('posts'));
     }
 }
