@@ -51,7 +51,6 @@
                             <li><a href="{{route('table_basic')}}">Static Tables</a></li>
                             <li><a href="{{route('table_data')}}">Notes List</a></li>
                             <li><a href="{{route('users_list')}}">Users List</a></li>
-                            <li><a href="{{route('post')}}">Post</a></li>
                         </ul>
                     </li>
                 </ul>

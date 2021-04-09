@@ -23,7 +23,7 @@
                 <td>{{$user->phone_number}}</td>
                 <td>{{$user->email}}</td>
                 <td class="row">
-                    <a href="{{route('post')}}" class="col-12 col-lg-4 btn btn-primary btn-sm">Post</a>
+                    <a href="{{route('post', $user)}}" class="col-12 col-lg-4 btn btn-primary btn-sm">Post</a>
                     <a href="{{route('user_edit', $user)}}" class="col-12 col-lg-4 btn btn-warning btn-sm ml-5">Editar</a>
                     <form action="{{ route('user_delete', $user) }}" class="col-12 col-lg-4" method="POST">
                         @method('DELETE')

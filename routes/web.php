@@ -38,7 +38,7 @@ Route::put('/user_edit/{id}', 'HomeController@user_update' )->name('user_update'
 Route::delete('/user_delete/{id}', 'HomeController@user_delete')->name('user_delete');
 
 /*Post*/
-Route::get('post','homeController@post')->name('post');
+Route::get('/post/{id}','homeController@post')->name('post');
 
 Auth::routes();
 

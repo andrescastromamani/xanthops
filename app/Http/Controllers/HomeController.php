@@ -101,14 +101,14 @@ class HomeController extends Controller
         return back()->with('message', 'Usuario editado exitosamente!');
     }
     public function user_delete($id){
-        $userDelete = App\User::findOrFail($id);
-        $userDelete->delete();
-        return back()->with('message', 'Usuario eliminado exitosamente!');
+            $userDelete = App\User::findOrFail($id);
+            $userDelete->delete();
+            return back()->with('message', 'Usuario eliminado exitosamente!');
     }
 
     /*Posts*/
-    public function post(){
-        $posts = App\Post::all();
-        return view('post',compact('posts'));
+    public function post($id){
+        $user = App\User::findOrFail($id);
+        return view('post', compact('user'));
     }
 }
