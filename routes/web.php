@@ -19,26 +19,14 @@ Route::get('widgets','HomeController@widgets')->name('widgets');
 
 Route::get('layouts','HomeController@layouts')->name('layouts');
 
-Route::get('table_basic','HomeController@table_basic')->name('table_basic');
-
-Route::get('table_data','HomeController@table_data')->name('table_data');
-
-Route::post('table_data','HomeController@create')->name('create');
-
-Route::get('/edit/{id}','HomeController@edit')->name('edit');
-
-Route::put('/edit/{id}', 'HomeController@update' )->name('update');
-
-Route::delete('/delete/{id}', 'HomeController@delete')->name('delete');
-
 /*User*/
-Route::get('users_list', 'HomeController@users_list')->name('users_list');
-Route::get('/user_edit/{id}', 'HomeController@user_edit')->name('user_edit');
-Route::put('/user_edit/{id}', 'HomeController@user_update' )->name('user_update');
-Route::delete('/user_delete/{id}', 'HomeController@user_delete')->name('user_delete');
+Route::get('users', 'HomeController@index')->name('users.index');
+Route::get('users/{id}/edit', 'HomeController@edit')->name('users.edit');
+Route::put('users/{id}', 'HomeController@update' )->name('users.update');
+Route::delete('users/{id}', 'HomeController@destroy')->name('users.destroy');
 
 /*Post*/
-Route::get('/post/{id}','homeController@post')->name('post');
+Route::get('post/{id}','homeController@post')->name('post');
 
 Auth::routes();
 

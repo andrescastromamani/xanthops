@@ -46,12 +46,7 @@
                         <a href="{{route('widgets')}}"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Users List</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="{{route('table_basic')}}">Static Tables</a></li>
-                            <li><a href="{{route('table_data')}}">Notes List</a></li>
-                            <li><a href="{{route('users_list')}}">Users List</a></li>
-                        </ul>
+                        <a href="{{route('users.index')}}"><i class="fa fa-table"></i> <span class="nav-label">Users</span></a>
                     </li>
                 </ul>
             </div>

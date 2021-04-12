@@ -7,7 +7,7 @@
                 {{ session('message') }}
             </div>
         @endif
-        <form class="row g-3" action="{{ route('user_update', $user->id) }}" method="POST">
+        <form class="row g-3" action="{{ route('users.update', $user->id) }}" method="POST">
             @method('PUT')
             @csrf
             <div class="col-md-6">
@@ -27,7 +27,7 @@
                 <input type="text" class="form-control" id="inputPassword4" name="email" value="{{ $user->email }}">
             </div>
             <div class="col-md-6 mt-5">
-                <button type="submit" class="btn btn-primary" href="{{route('users_list')}}">Guardar</button>
+                <button type="submit" class="btn btn-primary" href="">Guardar</button>
             </div>
         </form>
     </div>

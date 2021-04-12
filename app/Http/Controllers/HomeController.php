@@ -22,10 +22,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
+
     public  function  widgets(){
         return view('widgets');
     }
@@ -39,59 +36,16 @@ class HomeController extends Controller
         $notes = App\Note::paginate(3);
         return view('table_data',compact('notes'));
     }
-    public function create(Request $request){
-        //return $request;
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required'
-        ]);
-        $newNote = new App\Note;
-        $newNote->title = $request->title;
-        $newNote->description = $request->description;
-
-        $file = $request->file('image');
-        $destinationPath = 'img/images/';
-        $filename = $file->getClientOriginalName();
-        $uploadSuccess = $request->file('image')->move($destinationPath,$filename);
-        $newNote->image = $destinationPath . $filename;
-        $newNote->save();
-
-        return back()->with('message', 'Nota agregada correctamente!');
+    /*Users*/
+    public function index(){
+        $users = App\User::all();
+        return view('users.index', compact('users'));
     }
     public function edit($id){
-        $note = App\Note::findOrFail($id);
-        return view('edit', compact('note'));
+        $user = App\User::findOrFail($id);
+        return view('users.edit', compact('user'));
     }
     public function update(Request $request, $id){
-        $noteUpdate = App\Note::find($id);
-        $noteUpdate->title = $request->title;
-        $noteUpdate->description = $request->description;
-
-        $file = $request->file('image');
-        $destinationPath = 'img/images/';
-        $filename = $file->getClientOriginalName();
-        $uploadSuccess = $request->file('image')->move($destinationPath,$filename);
-        $noteUpdate->image = $destinationPath . $filename;
-        $noteUpdate->save();
-        return back()->with('message', 'Nota editada correctamente!');
-    }
-    public function delete($id){
-        $noteDelete = App\Note::findOrFail($id);
-        $noteDelete->delete();
-        return back()->with('message', 'Nota Eliminada Exitosamente!');
-    }
-
-    /*Users*/
-    public function users_list(){
-        $users = App\User::all();
-        return view('users_list', compact('users'));
-    }
-    public function user_edit($id){
-        $user = App\User::findOrFail($id);
-        return view('user_edit', compact('user'));
-    }
-    public function user_update(Request $request, $id){
-
         $userUpdate = App\User::find($id);
         $userUpdate->name = $request->name;
         $userUpdate->last_name = $request->last_name;
@@ -100,7 +54,7 @@ class HomeController extends Controller
         $userUpdate->save();
         return back()->with('message', 'Usuario editado exitosamente!');
     }
-    public function user_delete($id){
+    public function destroy($id){
             $userDelete = App\User::findOrFail($id);
             $userDelete->delete();
             return back()->with('message', 'Usuario eliminado exitosamente!');
