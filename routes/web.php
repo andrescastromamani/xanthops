@@ -20,13 +20,10 @@ Route::get('widgets','HomeController@widgets')->name('widgets');
 Route::get('layouts','HomeController@layouts')->name('layouts');
 
 /*User*/
-Route::get('users', 'HomeController@index')->name('users.index');
-Route::get('users/{id}/edit', 'HomeController@edit')->name('users.edit');
-Route::put('users/{id}', 'HomeController@update' )->name('users.update');
-Route::delete('users/{id}', 'HomeController@destroy')->name('users.destroy');
+Route::resource('users',UserController::class);
 
 /*Post*/
-Route::get('post/{id}','homeController@post')->name('post');
+Route::get('users/{id}/posts','homeController@post')->name('users.posts');
 
 Auth::routes();
 
