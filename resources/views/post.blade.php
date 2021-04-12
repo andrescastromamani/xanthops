@@ -1,8 +1,15 @@
 @extends('layouts.layout')
 @section('section')
     <div class="container">
-        <h1>Lista de Post</h1>
-        <span>{{$user->id}}</span>
+        <h1> <strong>{{$user->name}}:</strong> Lista de Post</h1>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Agregar Post</h3>
+            </div>
+            <div class="col-lg-6">
+                <a class="btn btn-primary" href="{{route('post.create', $user)}}">Agregar</a>
+            </div>
+        </div>
         <table class="table">
             <thead>
             <tr>
