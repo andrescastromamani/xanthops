@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -74,8 +74,9 @@ class UserController extends Controller
         $userUpdate->last_name = $request->last_name;
         $userUpdate->phone_number = $request->phone_number;
         $userUpdate->email = $request->email;
+        $userUpdate->password = $request->password;
         $userUpdate->save();
-        return back()->with('message', 'Usuario editado exitosamente!');
+        return back()->with('info', 'Editado exitosamente!');
     }
 
     /**
