@@ -31,7 +31,7 @@ class HomeController extends Controller
     }
     public  function  layouts(){
         return view('layouts');
-    }
+    }/*
     public function post($id){
         $user = App\User::findOrFail($id);
         return view('post', compact('user'));
@@ -50,5 +50,5 @@ class HomeController extends Controller
         $newPost->category_id = $request->category;
         $newPost->save();
         return back();
-    }
+    }*/
 }

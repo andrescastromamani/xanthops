@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App;
+use App\User;
+
 class PostController extends Controller
 {
     /**
@@ -11,9 +14,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($id)
-    {
-        $user = App\User::findOrFail($id);
-        return view('post', compact('user'));
+    {   $user = App\User::findOrFail($id);
+        return view('posts.index', compact('user'));
     }
 
     /**

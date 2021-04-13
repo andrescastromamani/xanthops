@@ -20,15 +20,9 @@ Route::get('widgets','HomeController@widgets')->name('widgets');
 Route::get('layouts','HomeController@layouts')->name('layouts');
 
 /*User*/
-Route::resource('users', 'UserController');
+Route::resource('users','UserController');
 /*Post*/
-Route::resource('posts','PostController');
-
-Route::get('users/{id}/posts','homeController@post')->name('users.posts');
-
-Route::get('users/{id}/post/create', 'HomeController@create')->name('post.create');
-
-Route::post('users/{id}/posts', 'HomeController@postcreate')->name('postcreate');
+Route::resource('users/{id}/posts','PostController');
 
 Auth::routes();
 
