@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 use Illuminate\Http\Request;
 use App;
 class UserController extends Controller
@@ -34,7 +35,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newUser = new User;
+        $newUser->name = $request->name;
+        $newUser->last_name = $request->last_name;
+        $newUser->phone_number = $request->phone_number;
+        $newUser->email = $request->email;
+        $newUser->password = $request->password;
+        $newUser->save();
+        return redirect()->route('users.index')->with('info', 'Usuario creado exitosamente!');
     }
 
     /**
@@ -76,7 +84,7 @@ class UserController extends Controller
         $userUpdate->email = $request->email;
         $userUpdate->password = $request->password;
         $userUpdate->save();
-        return back()->with('info', 'Editado exitosamente!');
+        return redirect()->route('users.index')->with('info', 'Editado exitosamente!');
     }
 
     /**
