@@ -88,6 +88,6 @@ class UserController extends Controller
     {
         $userDelete = App\User::findOrFail($id);
         $userDelete->delete();
-        return back()->with('message', 'Usuario eliminado exitosamente!');
+        return back()->with('info', 'Eliminado exitosamente!');
     }
 }
