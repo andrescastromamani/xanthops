@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostUserTable extends Migration
+class CreateUserItinerariesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreatePostUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_user', function (Blueprint $table) {
+        Schema::create('user__itineraries', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->unsignedBigInteger('user_id'); // Relation user
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')
@@ -34,6 +35,6 @@ class CreatePostUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_user');
+        Schema::dropIfExists('user__itineraries');
     }
 }
