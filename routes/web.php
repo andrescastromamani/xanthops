@@ -22,7 +22,7 @@ Route::get('layouts','HomeController@layouts')->name('layouts');
 /*User*/
 Route::resource('users','UserController');
 /*Post*/
-Route::resource('users/{id}/posts','PostController');
+Route::resource('users.posts','PostController');
 
 Auth::routes();
 

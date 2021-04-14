@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Post;
 use Illuminate\Http\Request;
 use App;
-use App\User;
 
 class PostController extends Controller
 {
@@ -14,7 +13,8 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($id)
-    {   $user = App\User::findOrFail($id);
+    {
+        $user = App\User::findOrFail($id);
         return view('posts.index', compact('user'));
     }
 
@@ -23,9 +23,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $user = App\User::findOrFail($id);
+        return view('posts.create', compact('user'));
     }
 
     /**
@@ -34,9 +35,17 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request , $id)
     {
-        //
+        $user = App\User::findOrFail($id);
+        $newPost = new Post;
+        $newPost->name = $request->name;
+        $newPost->title = $request->title;
+        $newPost->description = $request->description;
+        $newPost->status = $request->status;
+        $newPost->category_id = $request->category_id;
+        $newPost->save();
+        return redirect()->route('users.posts.index', $user)->with('info', 'Post creado exitosamente!');
     }
 
     /**
@@ -56,11 +65,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_user, $id_post)
     {
-        //
+        $user = App\User::findOrFail($id_user);
+        $post= App\Post::findOrFail($id_post);
+        return view('posts.edit',compact('user','post'));
     }
 
+    /*
     /**
      * Update the specified resource in storage.
      *
@@ -70,7 +82,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $postUpdate = App\Post::find($id);
+        $postUpdate->name = $request->name;
+        $postUpdate->title = $request->title;
+        $postUpdate->description = $request->description;
+        $postUpdate->status = $request->status;
+        $postUpdate->save();
+        return redirect()->route('users.posts.index')->with('info', 'Editado exitosamente!');
     }
 
     /**
@@ -81,6 +99,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $postDelete = App\Post::findOrFail($id);
+        $postDelete->delete();
+        return back()->with('info', 'Eliminado exitosamente!');
     }
 }

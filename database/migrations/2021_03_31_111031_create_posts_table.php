@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('status');
             $table->unsignedBigInteger('category_id')->nullable(); // Relation categories
             $table->foreign('category_id')->references('id')->on('categories')
-                    ->onDelete('set Null')
+                    ->onDelete('cascade')
                     ->onUpdate('cascade');
             $table->timestamps();
         });

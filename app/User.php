@@ -40,5 +40,8 @@ class User extends Authenticatable
     public function posts(){
         return $this->belongsToMany(Post::class)->withTimestamps();
     }
+    public function category(){
+        return $this->hasOneThrough(Category::class, Post::class);
+    }
 }
 

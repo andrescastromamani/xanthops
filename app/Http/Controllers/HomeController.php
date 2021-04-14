@@ -51,4 +51,9 @@ class HomeController extends Controller
         $newPost->save();
         return back();
     }*/
+    public function edit($id, $pid){
+        $user = App\User::findOrFail($id);
+        $post = App\Post::findOrFail($pid);
+        return view('posts.edit',compact('user','post'));
+    }
 }

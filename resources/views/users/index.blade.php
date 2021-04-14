@@ -32,7 +32,7 @@
                         @csrf
                         <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                     </form>
-                    <a href="{{route('posts.index', $user)}}" class="col-12 col-lg-4 btn btn-primary btn-sm">Posts</a>
+                    <a href="{{route('users.posts.index', $user)}}" class="col-12 col-lg-4 btn btn-primary btn-sm">Posts</a>
                 </td>
             </tr>
         @endforeach
