@@ -27,8 +27,8 @@
             <div class="col-md-8">
                 <label for="category_id" class="form-label">Categoria</label>
                 <select class="form-select" aria-label="Default select example" name="category_id">
-                    @foreach($user->posts as $post)
-                        <option value="{{$post->category->id}}" >{{$post->category->name}}</option>
+                    @foreach($category as $cat)
+                        <option value="{{$cat->id}}" >{{$cat->name}}</option>
                     @endforeach
                 </select>
             </div>

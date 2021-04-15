@@ -25,8 +25,9 @@ class PostController extends Controller
      */
     public function create($id)
     {
+        $category = App\Category::all();
         $user = App\User::findOrFail($id);
-        return view('posts.create', compact('user'));
+        return view('posts.create', compact('user', 'category'));
     }
 
     /**
@@ -69,9 +70,10 @@ class PostController extends Controller
      */
     public function edit($id_user, $id_post)
     {
+        $category = App\Category::all();
         $user = App\User::findOrFail($id_user);
         $post= App\Post::findOrFail($id_post);
-        return view('posts.edit',compact('user','post'));
+        return view('posts.edit',compact('user','post', 'category'));
     }
 
     /*
@@ -82,15 +84,17 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_user, $id_post)
     {
-        $postUpdate = App\Post::find($id);
+        $user = App\User::findOrFail($id_user);
+        $postUpdate = App\Post::find($id_post);
         $postUpdate->name = $request->name;
         $postUpdate->title = $request->title;
         $postUpdate->description = $request->description;
         $postUpdate->status = $request->status;
+        $postUpdate->category_id = $request->category_id;
         $postUpdate->save();
-        return redirect()->route('users.posts.index')->with('info', 'Editado exitosamente!');
+        return redirect()->route('users.posts.index' , $user)->with('info', 'Editado exitosamente!');
     }
 
     /**
@@ -101,8 +105,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        $user = App\User::findOrFail($id);
         $postDelete = App\Post::findOrFail($id);
         $postDelete->delete();
+        $post = App\Post::latest('id')->first();
+        $user->posts()->detach($post);
         return back()->with('info', 'Eliminado exitosamente!');
     }
 }
