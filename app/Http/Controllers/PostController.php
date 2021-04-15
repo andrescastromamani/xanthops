@@ -45,6 +45,8 @@ class PostController extends Controller
         $newPost->status = $request->status;
         $newPost->category_id = $request->category_id;
         $newPost->save();
+        $post = App\Post::latest('id')->first();
+        $user->posts()->attach($post);
         return redirect()->route('users.posts.index', $user)->with('info', 'Post creado exitosamente!');
     }
 

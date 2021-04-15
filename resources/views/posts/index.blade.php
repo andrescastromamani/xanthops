@@ -12,6 +12,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Descripcion</th>
+                <th scope="col">Estado</th>
                 <th scope="col">Catogoria</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -23,6 +24,7 @@
                     <td>{{$post->name}}</td>
                     <td>{{$post->title}}</td>
                     <td>{{$post->description}}</td>
+                    <td>{{$post->status}}</td>
                     <td>{{$post->category->name}}</td>
                     <td class="row">
                         <a href="{{route('users.posts.edit', array($user,$post))}}" class="col-12 col-lg-4 btn btn-warning btn-sm ml-5">Editar</a>

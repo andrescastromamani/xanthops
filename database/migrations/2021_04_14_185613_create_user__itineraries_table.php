@@ -15,7 +15,6 @@ class CreateUserItinerariesTable extends Migration
     {
         Schema::create('user__itineraries', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->unsignedBigInteger('user_id'); // Relation user
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')

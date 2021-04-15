@@ -10,6 +10,6 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
     public function users(){
-        return $this->belongsToMany(User::class)->withTimestamps();
+        return $this->belongsToMany(User::class,'user__itineraries', 'post_id','user_id');
     }
 }
