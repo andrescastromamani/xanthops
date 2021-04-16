@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use App;
+use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
     /**
@@ -40,7 +42,7 @@ class UserController extends Controller
         $newUser->last_name = $request->last_name;
         $newUser->phone_number = $request->phone_number;
         $newUser->email = $request->email;
-        $newUser->password = $request->password;
+        $newUser->password =  Hash::make( $request->password);
         $newUser->save();
         return redirect()->route('users.index')->with('info', 'Usuario creado exitosamente!');
     }
@@ -82,7 +84,7 @@ class UserController extends Controller
         $userUpdate->last_name = $request->last_name;
         $userUpdate->phone_number = $request->phone_number;
         $userUpdate->email = $request->email;
-        $userUpdate->password = $request->password;
+        $userUpdate->password = Hash::make($request->password);
         $userUpdate->save();
         return redirect()->route('users.index')->with('info', 'Editado exitosamente!');
     }
