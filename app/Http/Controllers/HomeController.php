@@ -31,29 +31,5 @@ class HomeController extends Controller
     }
     public  function  layouts(){
         return view('layouts');
-    }/*
-    public function post($id){
-        $user = App\User::findOrFail($id);
-        return view('post', compact('user'));
-    }
-    public function create($id){
-        $categories = App\Category::all();
-        $user = App\User::findOrFail($id);
-        return view('create',compact('user', 'categories'));
-    }
-    public function postcreate(Request $request){
-        $newPost = App\Post;
-        $newPost->name = $request->name;
-        $newPost->title = $request->title;
-        $newPost->description = $request->title;
-        $newPost->status = $request->status;
-        $newPost->category_id = $request->category;
-        $newPost->save();
-        return back();
-    }*/
-    public function edit($id, $pid){
-        $user = App\User::findOrFail($id);
-        $post = App\Post::findOrFail($pid);
-        return view('posts.edit',compact('user','post'));
     }
 }
