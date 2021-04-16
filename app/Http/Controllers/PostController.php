@@ -15,6 +15,7 @@ class PostController extends Controller
     public function index($id)
     {
         $user = App\User::findOrFail($id);
+        return Post::active()->get();
         return view('posts.index', compact('user'));
     }
 

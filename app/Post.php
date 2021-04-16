@@ -12,4 +12,10 @@ class Post extends Model
     public function users(){
         return $this->belongsToMany(User::class,'user__itineraries', 'post_id','user_id');
     }
+    public function scopeActive($query){
+        return $query->where('active',1);
+    }
+    public function scopePopular($query){
+        return $query->where('views', '>', 100);
+    }
 }
