@@ -12,6 +12,13 @@ use App\Http\Resources\NoteCollection;
 class NoteController extends Controller
 {
     protected $note;
+    /*
+     1xx: Informativos
+     2xx: respuestas exitosas
+     3xx: redireccion
+     4xx: errores del cliente
+     5xx: errores del servidor
+    */
     public function __construct(Note $note)
     {
         $this->note = $note;

@@ -25,7 +25,7 @@ Route::resource('users','UserController');
 Route::resource('users.posts','PostController');
 /*Note*/
 Route::group(['prefix'=>'api'], function (){
-    Route::apiResource('notes','Api\NoteController')->except('create','edit');
+    //Route::apiResource('notes','Api\NoteController')->except('create','edit');
 });
 
 Auth::routes();
