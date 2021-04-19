@@ -6,10 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Note;
 use Illuminate\Http\Request;
 use App\Http\Resources\Note as NoteResources;
-use App\Http\Requests\Note as NoteRequest;
+use App\Http\Requests\Note as NoteRequests;
 
 class NoteController extends Controller
 {
+    protected $note;
+    public function __construct(Note $note)
+    {
+        $this->note = $note;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,9 +32,10 @@ class NoteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NoteRequest $request)
+    public function store(NoteRequests $request)
     {
-        //
+        $note = $this->note->create($request->all());
+        return response()->json(new NoteResources($note),201);
     }
 
     /**
@@ -49,9 +56,10 @@ class NoteController extends Controller
      * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function update(NoteRequest $request, Note $note)
+    public function update(NoteRequests $request, Note $note)
     {
-        //
+        $note->update($request->all());
+        return response()->json(new NoteResources($note));
     }
 
     /**

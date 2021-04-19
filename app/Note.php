@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
+    protected $fillable = [
+        'title', 'description',
+    ];
     /*
     protected $hidden = ['title','description'];
     protected $appends = ['post_name','post_excerpt'];
