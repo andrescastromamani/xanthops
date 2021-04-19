@@ -23,6 +23,10 @@ Route::get('layouts','HomeController@layouts')->name('layouts');
 Route::resource('users','UserController');
 /*Post*/
 Route::resource('users.posts','PostController');
+/*Note*/
+Route::group(['prefix'=>'api'], function (){
+    Route::apiResource('notes','Api\NoteController')->except('create','edit');
+});
 
 Auth::routes();
 
