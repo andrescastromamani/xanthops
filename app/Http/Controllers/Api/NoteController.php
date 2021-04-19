@@ -7,6 +7,7 @@ use App\Note;
 use Illuminate\Http\Request;
 use App\Http\Resources\Note as NoteResources;
 use App\Http\Requests\Note as NoteRequests;
+use App\Http\Resources\NoteCollection;
 
 class NoteController extends Controller
 {
@@ -23,7 +24,11 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(
+            new NoteCollection(
+                $this->note->orderBy('id','desc')->get()
+            )
+        );
     }
 
     /**
