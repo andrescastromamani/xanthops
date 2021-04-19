@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Note;
 use Illuminate\Http\Request;
+use App\Http\Resources\Note as NoteResources;
+use App\Http\Requests\Note as NoteRequest;
 
 class NoteController extends Controller
 {
@@ -24,7 +26,7 @@ class NoteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NoteRequest $request)
     {
         //
     }
@@ -37,7 +39,7 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        return $note;
+        return response()->json(new NoteResources($note));
     }
 
     /**
@@ -47,7 +49,7 @@ class NoteController extends Controller
      * @param  \App\Note  $note
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Note $note)
+    public function update(NoteRequest $request, Note $note)
     {
         //
     }
@@ -60,6 +62,7 @@ class NoteController extends Controller
      */
     public function destroy(Note $note)
     {
-        //
+        $note->delete();
+        return response()->json(null,204);
     }
 }
