@@ -36,6 +36,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function scopeName($query, $name){
+        if ($name) {
+            return $query->where('name', 'LIKE', "%$name%");
+        }
+    }
 
     public function posts(){
         return $this->belongsToMany(Post::class, 'user__itineraries', 'user_id','post_id');
