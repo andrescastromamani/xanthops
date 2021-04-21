@@ -13,9 +13,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = App\User::orderBy('id','ASC')->paginate(10);
+        $name = $request->get('name');
+        $users = App\User::orderBy('id','ASC')
+                ->name($name)
+                ->paginate(10);
         return view('users.index', compact('users'));
     }
 
