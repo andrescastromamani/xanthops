@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         //dd(UserSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(RoleSeeder::class);
         factory(App\Note::class, 20)->create();
     }
 }
