@@ -164,6 +164,8 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -233,8 +235,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
         'Form' => Collective\Html\FormFacade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
