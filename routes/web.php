@@ -20,7 +20,7 @@ Route::get('widgets','HomeController@widgets')->name('widgets');
 Route::get('layouts','HomeController@layouts')->name('layouts');
 
 /*User*/
-Route::resource('users','UserController');
+Route::resource('users','UserController')->names('users');
 /*Post*/
 Route::resource('users.posts','PostController');
 /*Note*/
