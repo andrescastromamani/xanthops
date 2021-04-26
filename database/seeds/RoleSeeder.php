@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\User;
 
 
 class RoleSeeder extends Seeder
@@ -14,16 +15,30 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $role1 = Role::create(['name' => 'admin']);
-        $role2 = Role::create(['name' => 'lector']);
+        /*Permission list*/
+        Permission::create(['name' => 'users.index']);
+        Permission::create(['name' => 'users.create']);
+        Permission::create(['name' => 'users.edit']);
+        Permission::create(['name' => 'users.destroy']);
 
-        Permission::create(['name' => 'users.index'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'users.create'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'users.edit'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'users.destroy'])->syncRoles([$role1,$role2]);
+        Permission::create(['name' => 'layouts']);
+        Permission::create(['name' => 'widgets']);
 
-        Permission::create(['name' => 'layouts'])->syncRoles([$role1,$role2]);
-        Permission::create(['name' => 'widgets'])->syncRoles([$role1,$role2]);
+        /*Roles*/
+        $admin = Role::create(['name' => 'Admin']);
+        $admin->givePermissionTo([
+            'users.index',
+            'users.create',
+            'users.edit',
+            'users.destroy',
+        ]);
+        $lector = Role::create(['name' => 'Lector']);
+        $lector->givePermissionTo([
+            'users.index',
+        ]);
+        /*User Admin*/
 
+        $user = User::find(1);
+        $user->assignRole('Admin');
     }
 }

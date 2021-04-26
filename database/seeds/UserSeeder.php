@@ -17,7 +17,6 @@ class UserSeeder extends Seeder
     {
         /*Categories*/
         DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
-        /*
         Category::truncate();
         $category = new Category();
         $category->name = "Categoría 1";
@@ -32,7 +31,7 @@ class UserSeeder extends Seeder
         $category->save();
 
         /*Posts*/
-        /*
+
         Post::truncate();
         $post = new Post();
         $post->name = "Post 1";
@@ -75,14 +74,16 @@ class UserSeeder extends Seeder
         $post->save();
 
         /*Users*/
-        User::create([
+        /*
+        $user = User::create([
             'name'=>'Andres',
             'last_name'=>'Admin',
             'phone_number'=>'8699623',
             'email'=>'andres@admin.com',
             'password'=>bcrypt('andresadmin')
-        ])->syncRoles('admin');
-/*
+        ]);
+        $user->assignRole('users.edit');*/
+
         User::truncate();
         $user = new User();
         $user->name = "Andres";
@@ -90,7 +91,7 @@ class UserSeeder extends Seeder
         $user->phone_number = "67415949";
         $user->email = "andrescastro@gmail.com";
         $user->password = Hash::make('andrescastro');
-        $user->save()->assignRole('admin');
+        $user->save();
         $user->posts()->attach([1, 2]);
 
         $user = new User();
@@ -127,8 +128,7 @@ class UserSeeder extends Seeder
         $user->email = "danielcastro@gmail.com";
         $user->password = Hash::make('danielcastro');
         $user->save();
-        $user->posts()->attach([1]);*/
-        User::factory(9)->create();
+        $user->posts()->attach([1]);
 
     }
 }

@@ -45,9 +45,11 @@
                     <li>
                         <a href="{{route('widgets')}}"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
                     </li>
+                    @can('users.index')
                     <li>
                         <a href="{{route('users.index')}}"><i class="fa fa-table"></i> <span class="nav-label">Users</span></a>
                     </li>
+                    @endcan
                 </ul>
             </div>
         </nav>

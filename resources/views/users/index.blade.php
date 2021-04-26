@@ -38,13 +38,17 @@
                         <td>{{ $user->phone_number }}</td>
                         <td>{{ $user->email }}</td>
                         <td class="row">
+                            @can('users.edit')
                             <a href="{{ route('users.edit', $user) }}"
                                 class="col-12 col-lg-4 btn btn-warning btn-sm ml-5">Editar</a>
+                            @endcan
+                            @can('users.destroy')
                             <form action="{{ route('users.destroy', $user) }}" class="col-12 col-lg-4" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
+                                @endcan
                             <a href="{{ route('users.posts.index', $user) }}"
                                 class="col-12 col-lg-4 btn btn-primary btn-sm">Posts</a>
                         </td>
