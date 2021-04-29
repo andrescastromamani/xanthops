@@ -74,16 +74,6 @@ class UserSeeder extends Seeder
         $post->save();
 
         /*Users*/
-        /*
-        $user = User::create([
-            'name'=>'Andres',
-            'last_name'=>'Admin',
-            'phone_number'=>'8699623',
-            'email'=>'andres@admin.com',
-            'password'=>bcrypt('andresadmin')
-        ]);
-        $user->assignRole('users.edit');*/
-
         User::truncate();
         $user = new User();
         $user->name = "Andres";

@@ -1,0 +1,29 @@
+@page  {
+    margin: 0cm 0cm;
+    font-size: 1em;
+}
+body{
+    margin: 3cm 2cm 2cm;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2cm;
+    background-color: #0a568c;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 30px;
+}
+footer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2cm;
+    background-color: #0a568c;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 35px;
+}

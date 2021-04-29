@@ -13,12 +13,13 @@
                 </div>
             {!! Form::close() !!}
         </div>
-        <h1>
+        <h1 class="">
             <a href="{{ route('users.create') }}" class="btn btn-primary pull-right">Agregar +</a>
+            <a href="{{ route('pdfDownload') }}" class="btn btn-primary pull-left">Descargar Usuarios</a>
         </h1>
 
         @include('fragments.info')
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -49,8 +50,9 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
                                 @endcan
+                                <a href="#" class="col-lg-2 btn btn-primary btn-sm">Roles</a>
                             <a href="{{ route('users.posts.index', $user) }}"
-                                class="col-12 col-lg-4 btn btn-primary btn-sm">Posts</a>
+                                class="col-12 col-lg-2 btn btn-primary btn-sm">Posts</a>
                         </td>
                     </tr>
                 @endforeach
