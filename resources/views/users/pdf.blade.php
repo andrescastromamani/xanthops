@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset('css/stylespdf.css')}}">
+    <!--<link rel="stylesheet" href="{{asset('css/stylespdf.css')}}">-->
     <title>PDF</title>
 </head>
 <body>

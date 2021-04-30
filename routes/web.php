@@ -21,7 +21,8 @@ Route::get('layouts','HomeController@layouts')->name('layouts');
 
 /*User*/
 Route::resource('users','UserController')->names('users');
-Route::get('users.index','PdfController@pdf')->name('pdfDownload');
+Route::get('users.index','PdfController@pdf')->name('users.pdf');
+Route::get('users.excel','PdfController@excel')->name('users.excel');
 /*Post*/
 Route::resource('users.posts','PostController');
 /*Note*/

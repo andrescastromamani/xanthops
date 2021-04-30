@@ -15,7 +15,8 @@
         </div>
         <h1 class="">
             <a href="{{ route('users.create') }}" class="btn btn-primary pull-right">Agregar +</a>
-            <a href="{{ route('pdfDownload') }}" class="btn btn-primary pull-left">Descargar Usuarios</a>
+            <a href="{{ route('users.pdf') }}" class="btn btn-success pull-left">Exportar PDF</a>
+            <a href="{{ route('users.excel' )}}" class="btn btn-primary pull-left">Exportar EXCEL</a>
         </h1>
 
         @include('fragments.info')
