@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
+use App\Imports\UsersImport;
+
 class PdfController extends Controller
 {
     public function pdf(){
@@ -16,5 +18,10 @@ class PdfController extends Controller
     }
     public function excel(){
         return Excel::Download(new UsersExport, 'users.xlsx');
+    }
+    public function excelImport(Request  $request){
+        $file = $request->file('file');
+        Excel::import(new UsersImport, $file);
+        return back()->with('message','Importacion de Usuarios exitosa');
     }
 }

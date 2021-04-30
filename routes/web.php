@@ -23,6 +23,7 @@ Route::get('layouts','HomeController@layouts')->name('layouts');
 Route::resource('users','UserController')->names('users');
 Route::get('users.index','PdfController@pdf')->name('users.pdf');
 Route::get('users.excel','PdfController@excel')->name('users.excel');
+Route::post('users.import.excel','PdfController@excelImport')->name('users.import.excel');
 /*Post*/
 Route::resource('users.posts','PostController');
 /*Note*/

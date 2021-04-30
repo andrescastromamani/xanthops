@@ -13,6 +13,18 @@
                 </div>
             {!! Form::close() !!}
         </div>
+        <div class="row">
+            <div class="col-12">
+                <form action="{{route('users.import.excel')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if(Session::has('message'))
+                        <p>{{Session::get('message')}}</p>
+                    @endif
+                    <input class="col-lg-3" type="file" name="file">
+                    <button class="btn btn-success col-lg-2">Importar Usuarios +</button>
+                </form>
+            </div>
+        </div>
         <h1 class="">
             <a href="{{ route('users.create') }}" class="btn btn-primary pull-right">Agregar +</a>
             <a href="{{ route('users.pdf') }}" class="btn btn-success pull-left">Exportar PDF</a>
@@ -51,7 +63,7 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
                                 @endcan
-                                <a href="#" class="col-lg-2 btn btn-primary btn-sm">Roles</a>
+                                <a href="#" class="col-lg-2 btn btn-success btn-sm">Roles</a>
                             <a href="{{ route('users.posts.index', $user) }}"
                                 class="col-12 col-lg-2 btn btn-primary btn-sm">Posts</a>
                         </td>
