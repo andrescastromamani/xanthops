@@ -6,7 +6,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use App\User;
 use Maatwebsite\Excel\Facades\Excel;
-
+use App\Exports\UsersExport;
 class PdfController extends Controller
 {
     public function pdf(){
