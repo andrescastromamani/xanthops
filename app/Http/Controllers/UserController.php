@@ -18,7 +18,7 @@ class UserController extends Controller
         $name = $request->get('name');
         $users = App\User::orderBy('id','ASC')
                 ->name($name)
-                ->paginate(5);
+                ->paginate(10);
         return view('users.index', compact('users'));
     }
 

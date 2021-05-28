@@ -13,6 +13,7 @@
                 </div>
             {!! Form::close() !!}
         </div>
+        @can('users.create')
         <div class="row">
             <div class="col-12">
                 <form action="{{route('users.import.excel')}}" method="POST" enctype="multipart/form-data">
@@ -25,8 +26,11 @@
                 </form>
             </div>
         </div>
+        @endcan
         <h1 class="">
+            @can('users.create')
             <a href="{{ route('users.create') }}" class="btn btn-primary pull-right">Agregar +</a>
+            @endcan
             <a href="{{ route('users.pdf') }}" class="btn btn-success pull-left">Exportar PDF</a>
             <a href="{{ route('users.excel' )}}" class="btn btn-primary pull-left">Exportar EXCEL</a>
         </h1>
@@ -54,18 +58,17 @@
                         <td class="row">
                             @can('users.edit')
                             <a href="{{ route('users.edit', $user) }}"
-                                class="col-12 col-lg-4 btn btn-warning btn-sm ml-5">Editar</a>
+                                class="col-12 col-lg-3 btn btn-warning btn-sm ml-5">Editar</a>
                             @endcan
                             @can('users.destroy')
-                            <form action="{{ route('users.destroy', $user) }}" class="col-12 col-lg-4" method="POST">
+                            <form action="{{ route('users.destroy', $user) }}" class="col-12 col-lg-3" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                            </form>
-                                @endcan
-                                <a href="#" class="col-lg-2 btn btn-success btn-sm">Roles</a>
+                            </form>@endcan
+                                <a href="#" class="col-lg-3 btn btn-success btn-sm">Roles</a>
                             <a href="{{ route('users.posts.index', $user) }}"
-                                class="col-12 col-lg-2 btn btn-primary btn-sm">Posts</a>
+                                class="col-12 col-lg-3 btn btn-primary btn-sm">Posts</a>
                         </td>
                     </tr>
                 @endforeach

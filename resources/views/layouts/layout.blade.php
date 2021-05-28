@@ -42,14 +42,12 @@
                     <li class="active">
                         <a href="{{route('layouts')}}"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
                     </li>
-                    <li>
+                    <li class="">
                         <a href="{{route('widgets')}}"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
                     </li>
-                    @can('users.index')
-                    <li>
+                    <li class="">
                         <a href="{{route('users.index')}}"><i class="fa fa-table"></i> <span class="nav-label">Users</span></a>
                     </li>
-                    @endcan
                 </ul>
             </div>
         </nav>
